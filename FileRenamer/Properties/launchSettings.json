@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "FileRenamer": {
-      "commandName": "Project",
-      "commandLineArgs": "\"E:\\DCIM\\100MEDIA\\*.jpg\"\r\n\"-n DJI_\"\r\n\"-f 1\""
-    }
-  }
-}
