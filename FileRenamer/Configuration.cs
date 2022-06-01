@@ -5,7 +5,22 @@ internal static class Configuration
     internal static void RunOptions(Options opt)
     {
         //handle options
-        Console.WriteLine($"Path: {opt.FilesPath}");
+        try
+        {
+            var files = FileService.GetFiles(opt.FilesPath);
+            int id = 1;
+
+            foreach (var file in files)
+            {
+                Console.WriteLine($"{id} -> {file.Name}");
+                id++;
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+
         Console.WriteLine($"Rename: {opt.ToFileName}");
         Console.WriteLine($"Numeric: {opt.NumericStart}");
     }
