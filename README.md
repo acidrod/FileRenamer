@@ -16,3 +16,5 @@ Lets assume you have a folder with 300 images named DJI_0300.jpg to DJI_0600.jpg
 
 ## Possible Ideas
  * Automatic Backup of original images in a subfolder called Backup
+
+[![build and test](https://github.com/acidrod/FileRenamer/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/acidrod/FileRenamer/actions/workflows/build-and-test.yml)
