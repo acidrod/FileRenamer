@@ -15,20 +15,19 @@ internal static class Configuration
         try
         {
             var files = FileService.GetFiles(opt.FilesPath);
+            int numericalStart = int.Parse(opt.NumericStart);
 
-            //foreach (var file in files)
-            //{
-            //    int numericalStart = int.Parse(opt.NumericStart);
-            //    var newFileName = FileService.GetNewFileName(file.Name,opt.ToFileName, numericalStart);
-            //}
+            foreach (var file in files)
+            {
+                var newFileName = FileService.GetNewFileName(file.Name, opt.ToFileName, numericalStart);
+                Console.WriteLine($"From: {file.Name} --> To: {newFileName}");
+                numericalStart++;
+            }
         }
         catch (Exception ex)
         {
             Console.WriteLine(ex.Message);
         }
-
-        Console.WriteLine($"Rename: {opt.ToFileName}");
-        Console.WriteLine($"Numeric: {opt.NumericStart}");
     }
 
     public static void HandleParseError(IEnumerable<Error> errs)
