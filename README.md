@@ -8,7 +8,7 @@ You will need to build the project to create an exe at this point. In the projec
     
 Take the generated exe and place it in the directory where you want it to reside, ideally you will want to add it as a new Windows PATH Environment Variable, so you can run it from every directory you need.
 
-## The idea
+## How did I came up with this project
 This application idea was borned out of my own needs to rename my drone images files in bulk, since i own a DJI Mini SE which currently does not supports Timelapse, so i'm forced to take a picture every 2, 3 or 5 seconds so I can stich them inside an app like Davinci Resolve, stabilize, render and upload to youtube. Out of this process i normally end up with a HUGE ammount of images and i think it's a good chance to build my own file renamer to test my skills and actually have something to show as a programmer who shares with the community using a tool like GitHub.
 
 ## Example
