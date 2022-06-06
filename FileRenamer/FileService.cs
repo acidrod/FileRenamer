@@ -1,11 +1,8 @@
-﻿namespace FileRenamer;
+﻿using System.Text;
 
-/*
- * Steps: 
- * 1. load all files names in an array of FileInfo.
- * 2. creates a new filename based on the -t and -n parameters
- * 3. rename files one by one looping thru the FileInfo array applying the new filename
-*/
+namespace FileRenamer;
+
+
 public static class FileService
 {
     public static FileInfo[] GetFiles(string path)
@@ -19,5 +16,17 @@ public static class FileService
         FileInfo[] files = new DirectoryInfo(folder).GetFiles(fileFilter);
         
         return files;
+    }
+
+    public static string GetNewFileName(string oldFile, string newFileName, int numericalStartPoint)
+    {
+        FileInfo info = new FileInfo(oldFile);
+        string fileExtention = info.Extension;
+
+        StringBuilder builder = new StringBuilder();
+        builder.Append(newFileName)
+            .Append(numericalStartPoint.ToString().PadLeft(4,'0'))
+            .Append(fileExtention);
+        return builder.ToString();
     }
 }
