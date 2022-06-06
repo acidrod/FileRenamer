@@ -56,4 +56,21 @@ public class FileServiceTests
         string path = givenPath;
         Assert.Throws<ArgumentNullException>(() => FileService.GetFiles(path));
     }
+
+    [TestCase]
+    public void When_AllArgumentsArePassedShouldReturnAValidNewFileName()
+    {
+        //Arrange
+        string originalFile = "DJI_0234.jpg";
+        string newFileName = "Scene_";
+        int numericalStartPoint = 10;
+
+        string expected = "Scene_0010.jpg";
+
+        //Act
+        var Actual = FileService.GetNewFileName(originalFile, newFileName, numericalStartPoint);
+
+        Assert.That(Actual, Is.EqualTo(expected));
+        Console.WriteLine(Actual);
+    }
 }
